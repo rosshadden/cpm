@@ -1,0 +1,8 @@
+{
+	"name": "zs-dmp-segment-api",
+	"description": "ZS Library: zs-dmp-segment-api",
+	"options": {
+		"outdir": "./docs",
+		"exclude": "dist,tmp,test,node_modules"
+	}
+}
