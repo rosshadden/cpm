@@ -1,2 +1,57 @@
-# lap
-Language-Agnostic Packages
+# cpm
+Cosmic Package Manager
+
+## WTF‽‽‽
+
+Cosmic packages are a language-agnostic format for defining common details about packages.
+There are several reasons for this, and while some of them may be individually dismissed as "laziness", I believe that as a whole they make a case for existence.
+
+### Properties
+
+Properties like the name, version, description, authors, and repositories should immediately come to mind, and we can start with these in explaining the theorized void that `cpm` fills.
+
+Many developers---hobbyists and professionals alike---are polyglots.
+We work across different languages, each with (or in some cases lacking) their own package ecosystems.
+For scripting reasons alone it is beneficial to have a universal definition of a lot of static properties.
+
+### Actions
+
+Perhaps a more useful thing to store in a language-agnostic way are what some other package managers call "scripts" or "targets".
+
+When we moved away from `Makefile`s in most ecosystems, we lost a very important thing:  A universal way to run actions.
+Granted, the action-running concept has often been ported to their language-specific package definitions, but we can benefit from keeping these agnostic.
+
+### Dependencies
+
+Many projects necessarily span multiple languages or frameworks.
+It is therefore not uncommon to see for example both a `package.json` file and a `bower.json` file, or `package.json` and `Cargo.toml`, etc.
+`npm` is in fact a great example even by itself, as there are many packages stored within it that aren't even for JavaScript or Node.js.
+In some cases this is because such packages have JavaScript dependencies, and in other cases it is simply for the conveniences that `npm` offers.
+
+Cosmic packages can define dependencies that reside in different places, such as `npm` and `bower`.
+
+## Goals (eventually "features", once implemented)
+
+- define static properties
+- get and set properties from the cli
+- define arbitrary actions, to be run by the cli
+- support dependencies from multiple package manager sources
+- import/fill from existing package files
+- export to specific package formats
+- draw inspiration from the good package managers of today, normalizing the common things and introducing the uncommon
+- support common package managers
+	- `npm`, `pip`, `cargo`, `gem`, `bower`
+- replace or support common task runners
+	- `Makefile`, `PKGBUILD`, `grunt`, `gulp`
+
+Maybe some of these goals (namely the task-runner one) are stupid, or entirely unnecessary.
+I don't really know yet.
+The idea is not necessarily solidified in my mind, and will certainly evolve to encompass more or possibly even less than I have currently decided.
+
+## Meta
+
+I am starting this as a Node.js package simply because it is the easiest format with which I can hit the ground running.
+I actually intend to make this a `rust` project, and don't plan on releasing it or publicizing it until I do so.
+It would of course then be uploaded to various system package managers, such as Pacman and Apt.
+However, it will be my first `rust` project, and thus progress will be somewhat slow.
+I want to start using this right now right now, so I am going to build it to a minimum viable product state before rewriting it.

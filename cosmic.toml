@@ -1,0 +1,7 @@
+[package]
+name = 'cpm'
+version = '0.0.0'
+authors = [ 'Ross Hadden <rosshadden@gmail.com> (http://github.com/rosshadden)' ]
+description = 'Cosmic Package Manager'
+repository = 'http://github.com/rosshadden/cpm'
+keywords = [ 'cosmic', 'package manager', 'universal', 'language-agnostic' ]
