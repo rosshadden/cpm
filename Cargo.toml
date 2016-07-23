@@ -6,3 +6,5 @@ authors = [ 'Ross Hadden <rosshadden@gmail.com>' ]
 description = 'Cosmic Package Manager'
 repository = 'http://github.com/rosshadden/cpm'
 keywords = [ 'cosmic', 'package manager', 'universal', 'language-agnostic' ]
+
+[dependencies]
