@@ -30,17 +30,33 @@ In some cases this is because such packages have JavaScript dependencies, and in
 
 Cosmic packages can define dependencies that reside in different places, such as `npm` and `bower`.
 
-## Goals (eventually "features", once implemented)
+## Features
 
-- define static properties
-- get and set properties from the cli
-- define arbitrary actions, to be run by the cli
-- support dependencies from multiple package manager sources
-- import/fill from existing package files
-- export to specific package formats
+- [x] define arbitrary actions, to be run by the cli
+- [ ] get properties from the cli
+- [ ] set properties from the cli
+- [ ] special operations for certain types
+	- [ ] increment/decrement numbers
+	- [ ] toggle booleans
+	- [ ] update dates to right now
+- [ ] define schemas for `cosmic.toml` files
+	- [ ] support static properties
+	- [ ] support types
+	- [ ] support defaults
+	- [ ] support dependencies from multiple package manager sources
+- [ ] import/fill from existing package files
+- [ ] export to specific package formats
+
+## Ideas
+
+- add a `sync` command that keeps package files in sync
+- maybe add an opt-in git hook or something, that calls `sync`
+
+## Goals
+
 - draw inspiration from the good package managers of today, normalizing the common things and introducing the uncommon
 - support common package managers
-	- `npm`, `pip`, `cargo`, `gem`, `bower`
+	- `npm`, `pip`, `cargo`, `gem`, `bower`, `luarocks`
 - replace or support common task runners
 	- `Makefile`, `PKGBUILD`, `grunt`, `gulp`
 
