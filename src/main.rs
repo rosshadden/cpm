@@ -3,6 +3,7 @@ extern crate toml;
 
 use std::fs::File;
 use std::io::Read;
+use std::os::unix::process::CommandExt;
 use std::process::Command;
 use std::str;
 
@@ -41,12 +42,11 @@ fn main() {
 		let actionCmd = actions.lookup(action).unwrap().as_str().unwrap();
 
 		let mut actionCmdIter = actionCmd.split(' ');
-		let cmd = actionCmdIter.next().unwrap();
+		let command = actionCmdIter.next().unwrap();
 		let args: Vec<&str> = actionCmdIter.collect();
 
-		Command::new(cmd)
+		let mut cmd = Command::new(command)
 			.args(&args)
-			.spawn()
-			.expect("what");
+			.exec();
 	}
 }

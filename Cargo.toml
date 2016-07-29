@@ -1,6 +1,6 @@
 [package]
 name = "cpm"
-version = "0.1.0"
+version = "0.1.1"
 authors = [ "Ross Hadden <rosshadden@gmail.com>" ]
 description = "Cosmic Package Manager"
 repository = "http://github.com/rosshadden/cpm"
